@@ -50,8 +50,8 @@ def won?(board)
 end
 
 def winner(board)
-  idx = won?(board)[0]
-  board[idx]
+  won?(board)[0].nil? ? nil : board[won?(board)[0]]
+
 end
 
 
