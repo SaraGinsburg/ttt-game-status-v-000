@@ -16,7 +16,9 @@ def empty_board?(board)
 end
 
 def won?(board)
-  empty_board = board.any? {|el| }
+  if empty_board(board)
+    return false
+  end
   x_board = x_board_rows(board)
   o_board = o_board_rows(board)
   WIN_COMBINATIONS.detect  do |win_comb|
