@@ -12,7 +12,6 @@ def won?(board)
   WIN_COMBINATIONS.detect  do |win_comb|
     win_comb.all? {|el| x_board.include?(el)} || win_comb.all? {|el| o_board.include?(el)}
   end
-  false
 end
 
 def x_board_rows(board)                        
