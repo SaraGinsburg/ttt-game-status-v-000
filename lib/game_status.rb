@@ -6,6 +6,10 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+def full?(board)
+  board.all? {|el|  !(el.nil? || el == " ")}
+end
+
 def empty_board?(board)
   board.each_with_index do |el, i|
     if position_taken?(board, i)
@@ -36,22 +40,24 @@ def won?(board)
   end
 end
 
-def x_board_rows(board)                        
-  x_board = []
-  board.each_with_index do |el, i|
-    if el == "X"
-      x_board << i
-    end
-  end
-  x_board
-end
 
-def o_board_rows(board)
-  o_board = []
-  board.each_with_index do |el, i|
-    if el == "O"
-      o_board << i
-    end
-  end
-  o_board
-end
+
+# def x_board_rows(board)                        
+#   x_board = []
+#   board.each_with_index do |el, i|
+#     if el == "X"
+#       x_board << i
+#     end
+#   end
+#   x_board
+# end
+#
+# def o_board_rows(board)
+#   o_board = []
+#   board.each_with_index do |el, i|
+#     if el == "O"
+#       o_board << i
+#     end
+#   end
+#   o_board
+# end
