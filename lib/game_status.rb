@@ -18,6 +18,7 @@ def over?(board)
   draw?(board) || won?(board) ? true  : false
 end
 
+
 def empty_board?(board)
   board.each_with_index do |el, i|
     if position_taken?(board, i)
@@ -48,6 +49,9 @@ def won?(board)
   end
 end
 
+def winner(board)
+  won?(board)[0]
+end
 
 
 # def x_board_rows(board)                        
