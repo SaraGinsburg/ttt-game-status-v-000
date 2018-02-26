@@ -16,7 +16,7 @@ def empty_board?(board)
 end
 
 def won?(board)
-  if empty_board(board)
+  if empty_board?(board)
     return false
   end
   x_board = x_board_rows(board)
