@@ -6,7 +6,17 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+def empty_board?(board)
+  board.each_with_index do |el, i|
+    if position_taken?(board, i)
+      return false
+    end
+  end
+  true
+end
+
 def won?(board)
+  empty_board = board.any? {|el| }
   x_board = x_board_rows(board)
   o_board = o_board_rows(board)
   WIN_COMBINATIONS.detect  do |win_comb|
