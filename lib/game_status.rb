@@ -24,6 +24,7 @@ def won?(board)
     if el == "X"
       x_board << i
     end
+  end
   o_board = []
   board.each_with_index do |el, i|
     if el == "O"
