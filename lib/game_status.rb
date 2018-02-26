@@ -19,8 +19,17 @@ def won?(board)
   if empty_board?(board)
     return false
   end
-  x_board = x_board_rows(board)
-  o_board = o_board_rows(board)
+  x_board = []
+  board.each_with_index do |el, i|
+    if el == "X"
+      x_board << i
+    end
+  o_board = []
+  board.each_with_index do |el, i|
+    if el == "O"
+      o_board << i
+    end
+  end
   WIN_COMBINATIONS.detect  do |win_comb|
     win_comb.all? {|el| x_board.include?(el)} || win_comb.all? {|el| o_board.include?(el)}
   end
