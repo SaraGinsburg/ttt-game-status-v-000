@@ -10,6 +10,10 @@ def full?(board)
   board.all? {|el|  !(el.nil? || el == " ")}
 end
 
+def draw?(board)
+  full?(board) && !won?(board) ? true : false
+end
+
 def empty_board?(board)
   board.each_with_index do |el, i|
     if position_taken?(board, i)
