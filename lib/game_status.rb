@@ -8,11 +8,11 @@ end
 
 def won?(board)
   x_board = x_board_rows(board)
-  # o_board = o_board_rows(board)
+  o_board = o_board_rows(board)
   WIN_COMBINATIONS.detect  do |win_comb|
-    win_comb.all? {|el| x_board.include?(el)}
-    # || win_comb.all? {|el| o_board.include?(el)}
+    win_comb.all? {|el| x_board.include?(el)} || win_comb.all? {|el| o_board.include?(el)}
   end
+  false
 end
 
 def x_board_rows(board)                        
